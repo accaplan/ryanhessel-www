@@ -7,6 +7,14 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     color: #333;
   }
+  
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2, h3 {
+    font-size:1.5rem;
+  }
 `
 
 const theme = {
