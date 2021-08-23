@@ -1,7 +1,8 @@
 import markdownStyles from './markdown-styles.module.css'
 import BlockContent from '@sanity/block-content-to-react'
+import React from 'react'
 
-export default function PostBody({ content }) {
+export const PostBody: React.FC<{ content: any }> = ({ content }) => {
   return (
     <div>
       <BlockContent
