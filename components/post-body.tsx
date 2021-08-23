@@ -2,7 +2,7 @@ import markdownStyles from './markdown-styles.module.css'
 import BlockContent from '@sanity/block-content-to-react'
 import React from 'react'
 
-export const PostBody: React.FC<{ content: any }> = ({ content }) => {
+export const PostBody: React.FC<{ content: unknown }> = ({ content }) => {
   return (
     <div>
       <BlockContent
