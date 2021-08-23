@@ -10,7 +10,8 @@
     "sanity"
   ],
   "scripts": {
-    "start": "sanity start"
+    "start": "sanity start",
+    "dev": "next dev"
   },
   "dependencies": {
     "@sanity/base": "^2.0.5",
