@@ -42,8 +42,10 @@ export async function getAllPostsWithSlug() {
   return data
 }
 
+export type PostAuthor = { name?: string; picture?: string }
+
 export type PostsForHome = {
-  author?: { name?: string }
+  author?: PostAuthor
   date?: string
   slug?: string
   title?: string
