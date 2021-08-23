@@ -1,3 +1,4 @@
+import { SanityImageSource } from '@sanity/image-url/lib/types/types'
 import client, { previewClient } from './sanity'
 
 const getUniquePosts = (posts) => {
@@ -41,7 +42,17 @@ export async function getAllPostsWithSlug() {
   return data
 }
 
-export async function getAllPostsForHome(preview) {
+export type PostsForHome = {
+  author?: { name?: string }
+  date?: string
+  slug?: string
+  title?: string
+  _id: string
+  coverImage?: SanityImageSource
+  excerpt?: string
+}[]
+
+export async function getAllPostsForHome(preview: boolean): Promise<PostsForHome> {
   const results = await getClient(preview).fetch(`*[_type == "post"] | order(publishedAt desc){
       ${postFields}
     }`)

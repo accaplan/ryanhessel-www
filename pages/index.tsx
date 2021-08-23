@@ -3,12 +3,16 @@ import MoreStories from '../components/more-stories'
 import HeroPost from '../components/hero-post'
 import Intro from '../components/intro'
 import Layout from '../components/layout'
-import { getAllPostsForHome } from '../lib/api'
+import { getAllPostsForHome, PostsForHome } from '../lib/api'
 import Head from 'next/head'
+import { GetStaticProps, NextPage } from 'next'
 
-export default function Index({ allPosts, preview }) {
+const Index: NextPage<{ allPosts: PostsForHome; preview: boolean }> = ({ allPosts, preview }) => {
   const heroPost = allPosts[0]
   const morePosts = allPosts.slice(1)
+
+  console.log(allPosts)
+
   return (
     <>
       <Layout preview={preview}>
@@ -34,10 +38,12 @@ export default function Index({ allPosts, preview }) {
   )
 }
 
-export async function getStaticProps({ preview = false }) {
+export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   const allPosts = await getAllPostsForHome(preview)
   return {
     props: { allPosts, preview },
     revalidate: 1,
   }
 }
+
+export default Index
