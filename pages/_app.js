@@ -1,13 +1,17 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
-
+import reset from 'styled-reset'
 const GlobalStyle = createGlobalStyle`
 
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 
 
+  ${reset}
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   html, body {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     color: #333;
     font-family: 'Playfair Display', serif;
@@ -19,7 +23,10 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  
+  img {
+    max-width:100%;
+  }
+
   h1 {
     font-size: 4rem;
   }
