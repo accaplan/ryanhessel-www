@@ -5,7 +5,7 @@ const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 
 
-  body {
+  html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -13,6 +13,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Playfair Display', serif;
     line-height:1.7;
     letter-spacing: .05ch;
+
+    @media (min-width:768px){
+      font-size: 20px;
+    }
   }
 
   
