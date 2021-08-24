@@ -1,12 +1,40 @@
 import Link from 'next/link'
+import styled from 'styled-components'
 
 export default function Header() {
   return (
-    <h2 className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight mb-20 mt-8">
-      <Link href="/">
-        <a className="hover:underline">Blog</a>
-      </Link>
-      .
-    </h2>
+    <>
+      <HeaderStyle>
+        <Link href="/">
+          <a className="hover:underline">Ryan Hessel</a>
+        </Link>
+      </HeaderStyle>
+      <ShimStyle />
+    </>
   )
 }
+
+const HEADER_HEIGHT = '4rem'
+
+const HeaderStyle = styled.div`
+  height: ${HEADER_HEIGHT};
+  position: fixed;
+  text-align: center;
+  width: 100vw;
+  border-bottom: 1px solid black;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: white;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+`
+const ShimStyle = styled.div`
+  padding-top: ${HEADER_HEIGHT};
+`
