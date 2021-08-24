@@ -13,10 +13,12 @@ const GlobalStyle = createGlobalStyle`
 
   html, body {
     box-sizing: border-box;
-    color: #333;
     font-family: 'Playfair Display', serif;
     line-height:1.7;
     letter-spacing: .05ch;
+    
+    color: #232629;
+    background:#EFEDE6;
 
     @media (min-width:768px){
       font-size: 20px;

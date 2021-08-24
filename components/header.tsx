@@ -45,7 +45,7 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <HeaderStyle isHidden={scrollDirection === 'up'}>
+      <HeaderStyle isHidden={scrollDirection === 'up' && scrollY > 100}>
         <Link href="/">
           <a className="hover:underline">Ryan Hessel</a>
         </Link>
