@@ -25,6 +25,7 @@ const GlobalStyle = createGlobalStyle`
 
   img {
     max-width:100%;
+    height:auto;
   }
 
   h1 {
